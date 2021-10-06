@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-header">Naujas ingredientas</div>
+    <div class="card-body">
+        <div class="mb-3"> 
+            <label class="form-label">Pavadinimas</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)] = "ingredientName"
+              #ingName
+              
+            />
+          </div>
+          <div class="mb-3"> 
+            <label class="form-label">Matavimo vienetai</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)] = "ingredientUnits"
+              #units
+              
+            />
+          </div>
+          <div class="mb-3"> 
+            <label class="form-label">Kiekis</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)] = "ingredientAmount"
+              #amount
+              
+            />
+
+            <button class="btn btn-success mt-3" (click)="addIngredient(ingName.value, units.value, amount.value)" >Prideti ingredienta</button>
+    </div>
+</div>

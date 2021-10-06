@@ -1,0 +1,122 @@
+<div class="container">
+  <div class="row mt-3">
+    <div class="card">
+      <div class="card-header">{{ receptas.name }}</div>
+      <div class="card-body">
+        <div class="mb-3">
+          <label class="form-label">Recepto aprasymas</label>
+          <textarea
+            type="text"
+            class="form-control"
+            [value]="receptas.description"
+            readonly
+          ></textarea>
+        </div>
+        <div class="mb-3"> 
+            <label class="form-label">Maistines savybes</label> 
+          <div class="mb-3"> 
+            <label class="form-label">Baltymu kiekis, g</label>
+            <input
+              type="text"
+              class="form-control"
+              [value]="receptas.proteins"
+              readonly
+            />
+          </div>
+          <div class="mb-3"> 
+            <label class="form-label">Angliavandeniu kiekis, g</label>
+            <input
+              type="text"
+              class="form-control"
+              [value]="receptas.carbs"
+              readonly
+            />
+          </div>
+          <div class="mb-3"> 
+            <label class="form-label">Riebalu kiekis, g</label>
+            <input
+              type="text"
+              class="form-control"
+              [value]="receptas.fat"
+              readonly
+            />
+          </div>
+          <div class="mb-3"> 
+            <label class="form-label">Kilokaloriju kiekis, kCal</label>
+            <input
+              type="text"
+              class="form-control"
+              [value]="receptas.calories"
+              readonly
+            />
+          </div>
+            <div class="mb-3"> 
+              <div class="card-header"> Ingredientai </div>
+              <div class="card-body" *ngFor="let ingredient of ingredientai; let ingi = index">
+                <input
+                type="text"
+                class="form-control"
+                [value]="ingredient.name +' '+ingredient.amount+' '+ ingredient.units"
+                readonly
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-success" [routerLink]="['prideti']">Prideti nauja ingridienta</button> 
+    </div>
+  </div>
+<!-- <app-prideti-ingredienta></app-prideti-ingredienta> -->
+</div>
+
+<!-- <div class="card">
+  <div class="card-header">Naujas ingredientas</div>
+  <div class="card-body">
+      <div class="mb-3"> 
+          <label class="form-label">Pavadinimas</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)] = "ingredientName"
+            #name
+            
+          />
+        </div>
+        <div class="mb-3"> 
+          <label class="form-label">Matavimo vienetai</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)] = "ingredientUnits"
+            #units
+            
+          />
+        </div>
+        <div class="mb-3"> 
+          <label class="form-label">Kiekis</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)] = "ingredientAmount"
+            #amount
+            
+          />
+
+          <button class="btn btn-success mt-3" (click)="addIngredient(name.value, units.value, amount.value)" >Prideti ingredienta</button>
+  </div>
+</div> -->
+
+
+<!-- {
+    
+    "description":"Išspauskite šilauoges,slyvas ir morkas nurodyta tvarka. Dar kartą perleiskite tirščius per aparatą,kad neliktų nė lašo skysčio.&nbsp;",
+    "proteins":"5",
+    "carbs":"15",
+    "fat":"0",
+    "calories":"89",
+    "ingredients":[
+       {
+          "name":"Morka",
+          "units":"vnt.",
+          "amount":"3"
+       }, -->
